@@ -39,9 +39,6 @@ export default function ClickHandler() {
                 <button onClick={(e) => customIncrement(number, e)}>
                     Click Me
                 </button>
-                <button onClick={(e) => customIncrement(number, e)}>
-                    Click Me
-                </button>
             </div>
 
             <input type="text" onChange={(e) => handleNameChange(e.target.value)} />
