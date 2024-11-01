@@ -1,12 +1,14 @@
-import Post from "./components/Post"
+import GetPost from "./components/GetPost";
+import Post from "./components/Post";
 
 function App() {
 
   return (
-    <>
-      <Post/>
-    </>
-  )
+      <div className="bg-gray-100 p-6">
+          <Post />
+          <GetPost />
+      </div>
+  );
 }
 
 export default App
