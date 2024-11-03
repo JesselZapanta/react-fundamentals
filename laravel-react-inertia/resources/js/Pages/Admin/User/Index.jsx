@@ -1,3 +1,4 @@
+import DangerButton from "@/Components/DangerButton";
 import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
 import Modal from "@/Components/Modal";
@@ -13,12 +14,16 @@ export default function Index() {
     //data = users
     const [data, setData] = useState([]);
 
+    //use for update and delete
     const [user, setUser] = useState(null);
 
+    // data loading and form proccesing state
     const [loading, setLoading] = useState(false);
     const [processing, setProcessing] = useState(false);
 
+    //for modal create-update and delete
     const [isOpenModal, setIsOpenModal] = useState(false);
+    const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
 
     //form data
     const [name, setName] = useState("");
@@ -26,9 +31,10 @@ export default function Index() {
     const [password, setPassword] = useState("");
     const [password_confirmation, setPassword_confirmation] = useState("");
 
-    //form errors
+    //form validation errors
     const [errors, setErrors] = useState({});
 
+    //function to get the data 
     const getData = async () => {
         setLoading(true);
 
@@ -54,14 +60,14 @@ export default function Index() {
         setIsOpenModal(true);
     };
 
-    const setFormData = (data) => {
-        setName(data.name);
-        setEmail(data.email);
-}
-
     const closeModal = () => {
         setIsOpenModal(false);
         reset();
+    };
+
+    const setFormData = (data) => {
+        setName(data.name);
+        setEmail(data.email);
     };
 
     const reset = () => {
@@ -72,6 +78,7 @@ export default function Index() {
         setErrors({});
     };
 
+    //for create and edit
     const handleSubmit = async (e) => {
         e.preventDefault();
         setProcessing(true);
@@ -89,6 +96,7 @@ export default function Index() {
                 if (res.data.status === "updated") {
                     reset();
                     closeModal();
+                    setUser(null);
                     getData();
                     //notification
                     alert("User updated successfully.");
@@ -134,6 +142,29 @@ export default function Index() {
             }
         }
     };
+
+    const openDeleteModal = (user) => {
+        setIsOpenDeleteModal(true);
+        setUser(user);
+    }
+
+    const handleDelete = async () => {
+        setProcessing(true);    
+        try{
+            const res = await axios.delete(`/admin/user/delete/${user.id}`);
+            if(res.data.status === 'deleted'){
+                setIsOpenDeleteModal(false);
+                setUser(null);
+                getData();
+                //notification
+                alert("User deleted successfully.");
+            }
+        }catch(err){
+            console.log(err)
+        }finally{
+            setProcessing(false);
+        }
+    }
 
     //get data when page load
     useEffect(() => {
@@ -228,11 +259,11 @@ export default function Index() {
                                                                 Edit
                                                             </button>
                                                             <button
-                                                                // onClick={() =>
-                                                                //     openDeleteModal(
-                                                                //         word
-                                                                //     )
-                                                                // }
+                                                                onClick={() =>
+                                                                    openDeleteModal(
+                                                                        user
+                                                                    )
+                                                                }
                                                                 className="font-medium text-red-600 dark:text-red-500 hover:underline mx-1"
                                                             >
                                                                 Delete
@@ -349,6 +380,25 @@ export default function Index() {
                             </PrimaryButton>
                         </div>
                     </form>
+                </div>
+            </Modal>
+            <Modal show={isOpenDeleteModal}>
+                <div className="p-6 text-gray-900 ">
+                    <h2 className="font-bold">Are you sure?</h2>
+                    <p className="mt-4">
+                        This action cannot be undone. This will permanently
+                        delete the account and remove the data from systems.
+                    </p>
+                    <div className="mt-4 flex justify-end">
+                        <SecondaryButton
+                            onClick={() => setIsOpenDeleteModal(false)}
+                        >
+                            Cancel
+                        </SecondaryButton>
+                        <DangerButton disabled={processing} onClick={handleDelete} className="ml-2">
+                            Delete
+                        </DangerButton>
+                    </div>
                 </div>
             </Modal>
         </AuthenticatedLayout>

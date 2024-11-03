@@ -96,6 +96,12 @@ class AdminUserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->delete();
+
+        return response()->json([
+            'status' => 'deleted'
+        ], 200);
     }
 }
