@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,12 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/admin/user', [AdminUserController::class, 'index'])->name('admin.user-index');
+Route::get('/admin/getUser', [AdminUserController::class, 'getData'])->name('admin.getUser-index');
+Route::post('/admin/user/store', [AdminUserController::class, 'store'])->name('admin.user-store');
+Route::put('/admin/user/update/{id}', [AdminUserController::class, 'update'])->name('admin.user-update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
