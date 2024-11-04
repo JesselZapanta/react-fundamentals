@@ -21,10 +21,17 @@ class AdminUserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function getData()
+    public function getData(Request $request)
     {
-        $users = User::orderBy('id', 'desc')->get();
-        return response()->json($users);
+
+        $search = $request->search;
+
+        return User::where('name', 'like', "%$search%")
+                        ->orWhere('email', 'like', "%$search%")
+                        ->orderBy('id', 'desc')
+                        ->paginate(10)
+                        ->onEachSide(1);
+
     }
 
     /**
@@ -54,7 +61,7 @@ class AdminUserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return User::findOrFail($id);
     }
 
     /**

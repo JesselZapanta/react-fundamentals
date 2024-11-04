@@ -20,6 +20,7 @@ export default function Index() {
     // data loading and form proccesing state
     const [loading, setLoading] = useState(false);
     const [processing, setProcessing] = useState(false);
+    const [search, setSearch] = useState("");
 
     //for modal create-update and delete
     const [isOpenModal, setIsOpenModal] = useState(false);
@@ -38,12 +39,16 @@ export default function Index() {
     const getData = async () => {
         setLoading(true);
 
+        const params = {
+            search: search,
+        };
+
         try {
-            const res = await axios.get(`/admin/getUser`);
-            setData(res.data);
+            const res = await axios.get(`/admin/getUser`, { params });
+            setData(res.data.data);
             // console.log(res.data);
         } catch (err) {
-            console.log();
+            console.log(err);
         } finally {
             setLoading(false);
         }
@@ -169,7 +174,8 @@ export default function Index() {
     //get data when page load
     useEffect(() => {
         getData();
-    }, []);
+    }, [search]);
+
 
     return (
         <AuthenticatedLayout
@@ -190,7 +196,20 @@ export default function Index() {
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
                             <div className="w-full overflow-auto">
-                                <div className="m-4 flex items-center justify-end">
+                                <div className="py-4 flex items-center justify-between">
+                                    <div className="flex gap-1">
+                                        <TextInput
+                                            id="search"
+                                            name="search"
+                                            value={search}
+                                            autoComplete="search"
+                                            onChange={(e) =>
+                                                setSearch(e.target.value)
+                                            }
+                                            className="mt-1 block w-full"
+                                            // required
+                                        />
+                                    </div>
                                     <button
                                         onClick={openCreateModal}
                                         className="px-4 py-2 bg-gray-600 text-gray-50 transition-all duration-300 rounded hover:bg-gray-700"
@@ -395,7 +414,11 @@ export default function Index() {
                         >
                             Cancel
                         </SecondaryButton>
-                        <DangerButton disabled={processing} onClick={handleDelete} className="ml-2">
+                        <DangerButton
+                            disabled={processing}
+                            onClick={handleDelete}
+                            className="ml-2"
+                        >
                             Delete
                         </DangerButton>
                     </div>
