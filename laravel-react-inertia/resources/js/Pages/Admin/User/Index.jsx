@@ -31,6 +31,7 @@ export default function Index() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password_confirmation, setPassword_confirmation] = useState("");
+    const [avatar, setAvatar] = useState("");
 
     //form validation errors
     const [errors, setErrors] = useState({});
@@ -80,6 +81,7 @@ export default function Index() {
         setEmail("");
         setPassword("");
         setPassword_confirmation("");
+        setAvatar("");
         setErrors({});
     };
 
@@ -96,6 +98,7 @@ export default function Index() {
                     email,
                     password,
                     password_confirmation,
+                    avatar
                 });
 
                 if (res.data.status === "updated") {
@@ -121,11 +124,18 @@ export default function Index() {
         }else{ 
             //create
             try {
-                const res = await axios.post(`/admin/user/store`, {
-                    name,
-                    email,
-                    password,
-                    password_confirmation,
+
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('password', password);
+                formData.append('password_confirmation', password_confirmation);
+                if(avatar) formData.append("avatar", avatar);
+                
+                const res = await axios.post(`/admin/user/store`, formData, {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    },
                 });
 
                 if (res.data.status === "saved") {
@@ -383,6 +393,30 @@ export default function Index() {
 
                             <InputError
                                 message={errors.password_confirmation}
+                                className="mt-2"
+                            />
+                        </div>
+
+                        <div className="mt-4">
+                            <InputLabel
+                                htmlFor="avatar"
+                                value="Avatar"
+                            />
+
+                            <TextInput
+                                id="avatar"
+                                type="file"
+                                name="avatar"
+                                value={avatar}
+                                onChange={(e) =>
+                                    setAvatar(e.target.files[0])
+                                }
+                                className="mt-1 block w-full"
+                                // required
+                            />
+
+                            <InputError
+                                message={errors.avatar}
                                 className="mt-2"
                             />
                         </div>

@@ -47,6 +47,9 @@ class AdminUserController extends Controller
      */
     public function store(AdminStoreUserRequest $request)
     {
+
+        return $request;
+
         $data = $request->validated();
 
         User::create($data);
