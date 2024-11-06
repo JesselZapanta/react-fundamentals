@@ -27,7 +27,7 @@ class AdminStoreUserRequest extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
             'password' => ['required', 'confirmed', Rules\password::defaults()],
-            'avatar' => ['nullable','image','mimes:jpg,png,jpeg'],
+            'avatar' => ['nullable','image','mimes:jpg,png,jpeg, gif'],
         ];
     }
 }

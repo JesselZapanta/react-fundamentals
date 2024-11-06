@@ -90,53 +90,44 @@ export default function Index() {
         e.preventDefault();
         setProcessing(true);
 
-        if(user){
-            //update/edit
-            try{
-                const res = await axios.put(`/admin/user/update/${user.id}`, {
-                    name,
-                    email,
-                    password,
-                    password_confirmation,
-                    avatar
-                });
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        if (password) formData.append("password", password);
+        if (password_confirmation)
+            formData.append("password_confirmation", password_confirmation);
+        if (avatar) formData.append("avatar", avatar);
+
+        if (user) {
+            setProcessing(true);
+            
+            try {
+                //
+                formData.append("_method", "put");
+
+                const res = await axios.post(
+                    `/admin/user/update/${user.id}`,formData
+                );
 
                 if (res.data.status === "updated") {
-                    reset();
+                    alert("User updated successfully.");
                     closeModal();
                     setUser(null);
                     getData();
-                    //notification
-                    alert("User updated successfully.");
                 }
-
-            }catch(err){
+            } catch (err) {
                 if (err.response && err.response.status === 422) {
                     setErrors(err.response.data.errors);
-                    // console.log(err);
                 } else {
                     console.log(err);
                 }
-            }finally{
+            } finally {
                 setProcessing(false);
             }
-
-        }else{ 
+        } else {
             //create
             try {
-
-                const formData = new FormData();
-                formData.append('name', name);
-                formData.append('email', email);
-                formData.append('password', password);
-                formData.append('password_confirmation', password_confirmation);
-                if(avatar) formData.append("avatar", avatar);
-                
-                const res = await axios.post(`/admin/user/store`, formData, {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                    },
-                });
+                const res = await axios.post(`/admin/user/store`, formData);
 
                 if (res.data.status === "saved") {
                     reset();
@@ -407,7 +398,6 @@ export default function Index() {
                                 id="avatar"
                                 type="file"
                                 name="avatar"
-                                value={avatar}
                                 onChange={(e) =>
                                     setAvatar(e.target.files[0])
                                 }

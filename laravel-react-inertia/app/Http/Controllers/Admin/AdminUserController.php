@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\AdminStoreUserRequest;
 use App\Http\Requests\Admin\AdminUpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminUserController extends Controller
 {
@@ -48,9 +49,13 @@ class AdminUserController extends Controller
     public function store(AdminStoreUserRequest $request)
     {
 
-        return $request;
-
         $data = $request->validated();
+
+        $avatar = $data['avatar'];
+
+        if($avatar){
+            $data['avatar'] = $avatar->store('avatar', 'public');
+        }
 
         User::create($data);
 
@@ -80,26 +85,32 @@ class AdminUserController extends Controller
      */
     public function update(AdminUpdateUserRequest $request, string $id)
     {
-        // return response()->json(['data' => $request->all()]);
-
         $user = User::findOrFail($id);
 
         $data = $request->validated();
 
-        $password = $data['password'] ?? null;
-
-        if($password){
+        if (!empty($data['password'])) {
             $data['password'] = bcrypt($data['password']);
-        }else{
+        } else {
             unset($data['password']);
         }
 
-        $user->update($data);//the problem
+        if ($request->hasFile('avatar')) {
+            if ($user->avatar) {
+                Storage::disk('public')->delete($user->avatar);
+            }
+            $data['avatar'] = $request->file('avatar')->store('avatar', 'public');
+        } else {
+            $data['avatar'] = $user->avatar;
+        }
+
+        $user->update($data);
 
         return response()->json([
             'status' => 'updated'
         ], 200);
     }
+
 
     /**
      * Remove the specified resource from storage.

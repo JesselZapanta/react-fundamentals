@@ -21,10 +21,10 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/admin/user', [AdminUserController::class, 'index'])->name('admin.user-index');
-Route::get('/admin/getUser', [AdminUserController::class, 'getData'])->name('admin.getUser-index');
-Route::post('/admin/user/store', [AdminUserController::class, 'store'])->name('admin.user-store');
-Route::put('/admin/user/update/{id}', [AdminUserController::class, 'update'])->name('admin.user-update');
-Route::delete('/admin/user/delete/{id}', [AdminUserController::class, 'destroy'])->name('admin.user-delete');
+Route::get('/admin/getUser', [AdminUserController::class, 'getData']);
+Route::post('/admin/user/store', [AdminUserController::class, 'store']);
+Route::put('/admin/user/update/{id}', [AdminUserController::class, 'update']);
+Route::delete('/admin/user/delete/{id}', [AdminUserController::class, 'destroy']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
