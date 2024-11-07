@@ -208,7 +208,6 @@ export default function Index() {
                                                 setSearch(e.target.value)
                                             }
                                             className="mt-1 block w-full"
-                                            // required
                                         />
                                     </div>
                                     <button
@@ -224,12 +223,6 @@ export default function Index() {
                                             <th className="px-3 py-3">ID</th>
                                             <th className="px-3 py-3">Name</th>
                                             <th className="px-3 py-3">Email</th>
-                                            {/* <th className="px-3 py-3">
-                                                Created At
-                                            </th>
-                                            <th className="px-3 py-3">
-                                                Updated At
-                                            </th> */}
                                             <th className="px-3 py-3">
                                                 Action
                                             </th>
@@ -261,12 +254,6 @@ export default function Index() {
                                                         <td className="px-3 py-2 text-nowrap">
                                                             {user.email}
                                                         </td>
-                                                        {/* <td className="px-3 py-2 text-nowrap">
-                                                            {user.created_at}
-                                                        </td>
-                                                        <td className="px-3 py-2 text-nowrap">
-                                                            {user.updated_at}
-                                                        </td> */}
                                                         <td className="px-3 py-2 text-nowrap">
                                                             <button
                                                                 onClick={() =>
