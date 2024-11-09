@@ -7,9 +7,6 @@ import { createRoot } from 'react-dom/client';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
-
-import { ChakraProvider } from "@chakra-ui/react";
-
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) =>
@@ -20,11 +17,7 @@ createInertiaApp({
     setup({ el, App, props }) {
         const root = createRoot(el);
 
-        root.render(
-            <ChakraProvider>
-                <App {...props} />
-            </ChakraProvider>
-        );
+        root.render(<App {...props} />);
     },
     progress: {
         color: '#4B5563',
