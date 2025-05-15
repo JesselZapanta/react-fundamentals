@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import SearchBox from "./components/SearchBox";
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const [search, setSearch] = useState('');
+
+    return (
+        <div className="bg-gray-100">
+            <div className="max-w-7xl h-screen mx-auto">
+                <main className="py-12 flex flex-col items-center justify-center">
+                    <img src="/images/main.svg" className="w-[400px]" />
+                    <h1 className="text-4xl text-indigo-800 font-bold text-center">Find Movies You'll <br /> Enjoy without a Hastle</h1>
+                    <SearchBox search={search} setSearch={setSearch}/>
+                </main>
+            </div>
+        </div>
+    );
 }
 
-export default App
+export default App;
