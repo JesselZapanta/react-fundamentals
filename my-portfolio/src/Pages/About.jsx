@@ -1,11 +1,9 @@
-import React from "react";
 import Code from "../Components/Code";
 import Tag from "../Components/Tag";
 
 export default function About() {
-    
     return (
-        <div id="about" className="max-w-7xl mx-auto p-16 px-6 ">
+        <div className="max-w-7xl mx-auto p-16 px-6 ">
             <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl text-gray-700 font-bold mb-4">
                     About Me

@@ -2,46 +2,53 @@ import { ExternalLink } from "lucide-react";
 import Tag from "../Components/Tag";
 
 export default function Projects() {
-  const projects = [
-      {
-          name: "Torch Publication",
-          stack: "Laravel + React",
-          description:
-              "A web-based publication platform for Tangub City Global College. Features include article submission, moderation, and e-newsletter distribution.",
-          image: "./torch.png",
-          tags: ["Laravel", "React", "Inertia", "Tailwind", "MySQL"],
-          link: "https://linen-salamander-492028.hostingersite.com/",
-      },
-      {
-          name: "Project Monitoring System",
-          stack: "Laravel + React",
-          description:
-              "An engineering project monitoring system tracking road, waterworks, and building construction with updates, progress photos, and reports.",
-          image: "./tcemps.png",
-          tags: [
-              "Laravel",
-              "React",
-              "Inertia",
-              "Tailwind",
-              "MySQL",
-              "AntDesign",
-              "Axios",
-          ],
-          link: "https://aquamarine-pony-526194.hostingersite.com/login",
-      },
-      {
-          name: "Inventory Management System",
-          stack: "Laravel + React",
-          description:
-              "Tracks product inventory, manages categories, suppliers, and users. Focused on efficient stock control and user-friendly CRUD operations.",
-          image: "./inventory.png",
-          tags: ["Laravel", "React", "Inertia", "Tailwind", "MySQL", "Shadcn"],
-          link: "https://your-inventory-link.com",
-      },
-  ];
-  
+    const projects = [
+        {
+            name: "Torch Publication",
+            stack: "Laravel + React",
+            description:
+                "A web-based publication platform for Tangub City Global College. Features include article submission, moderation, and e-newsletter distribution.",
+            image: "./torch.png",
+            tags: ["Laravel", "React", "Inertia", "Tailwind", "MySQL"],
+            link: "https://linen-salamander-492028.hostingersite.com/",
+        },
+        {
+            name: "Project Monitoring System",
+            stack: "Laravel + React",
+            description:
+                "An engineering project monitoring system tracking road, waterworks, and building construction with updates, progress photos, and reports.",
+            image: "./tcemps.png",
+            tags: [
+                "Laravel",
+                "React",
+                "Inertia",
+                "Tailwind",
+                "MySQL",
+                "AntDesign",
+                "Axios",
+            ],
+            link: "https://aquamarine-pony-526194.hostingersite.com/login",
+        },
+        {
+            name: "Inventory Management System",
+            stack: "Laravel + React",
+            description:
+                "Tracks product inventory, manages categories, suppliers, and users. Focused on efficient stock control and user-friendly CRUD operations.",
+            image: "./inventory.png",
+            tags: [
+                "Laravel",
+                "React",
+                "Inertia",
+                "Tailwind",
+                "MySQL",
+                "Shadcn",
+            ],
+            link: "https://your-inventory-link.com",
+        },
+    ];
+
     return (
-        <div id="projects" className="max-w-7xl mx-auto py-16 px-6">
+        <div className="max-w-7xl mx-auto py-16 px-6">
             <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl text-gray-700 font-bold mb-4">
                     My Projects

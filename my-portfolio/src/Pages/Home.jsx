@@ -3,10 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 export default function Home({ setActiveSection }) {
     return (
         <div className="bg-gray-50">
-            <div
-                id="home"
-                className="max-w-7xl min-h-screen mx-auto flex items-center justify-center pt-16 px-6">
-                {/* className="max-w-7xl mx-auto flex items-center justify-center pt-16 px-6"> */}
+            <div className="max-w-7xl min-h-screen mx-auto flex items-center justify-center pt-16 px-6">
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-18">
                     <div className="space-y-6 text-center lg:text-left order-last lg:order-first">
                         <div className="space-y-4">
@@ -41,15 +38,15 @@ export default function Home({ setActiveSection }) {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <a
-                                href="#projects"
-                                onClick={() => setActiveSection("projects")}
-                                className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium bg-slate-900 text-gray-200 h-11 rounded-md px-8 w-full sm:w-auto">
+                                href="#Projects"
+                                onClick={() => setActiveSection("Projects")}
+                                className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium bg-slate-900 text-gray-200 h-11 rounded-md px-8 w-full sm:w-auto hover:bg-slate-700 transition ease-in-out">
                                 View My Work
                             </a>
                             <a
-                                href="#contact"
-                                onClick={() => setActiveSection("contact")}
-                                className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium border border-slate-900 text-slate-900 h-11 rounded-md px-8 bg-primary w-full sm:w-auto">
+                                href="#Contact"
+                                onClick={() => setActiveSection("Contact")}
+                                className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium border border-slate-900 text-slate-900 h-11 rounded-md px-8 w-full sm:w-auto hover:bg-slate-100 transition ease-in-out">
                                 Contact Me
                             </a>
                         </div>

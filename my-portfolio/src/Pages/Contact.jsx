@@ -53,7 +53,7 @@ export default function Contact() {
 
     return (
         <div className="bg-gray-50">
-            <div id="contact" className="max-w-7xl mx-auto py-16 px-6">
+            <div  className="max-w-7xl mx-auto py-16 px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl text-gray-700 font-bold mb-4">
                         Get In Touch

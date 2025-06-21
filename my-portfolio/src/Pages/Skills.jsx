@@ -1,58 +1,57 @@
 export default function Skills() {
-
-  const skills = [
-      {
-          name: "React",
-          description:
-              "Building interactive user interfaces with a component-based architecture.",
-          icon: "./react.png",
-      },
-      {
-          name: "Laravel",
-          description:
-              "Robust back-end development with MVC and elegant syntax.",
-          icon: "./laravel.png",
-      },
-      {
-          name: "Tailwind CSS",
-          description: "Utility-first CSS for rapid UI development.",
-          icon: "./tailwind.png",
-      },
-      {
-          name: "JavaScript",
-          description:
-              "Core web development language for dynamic functionality.",
-          icon: "./javascript.png",
-      },
-      {
-          name: "PHP",
-          description:
-              "Server-side scripting with integration into Laravel and beyond.",
-          icon: "./php.png",
-      },
-      {
-          name: "MySQL",
-          description:
-              "Reliable relational database management for storing and querying data.",
-          icon: "./mysql.png",
-      },
-      {
-          name: "Inertia.js",
-          description:
-              "Bridges the gap between modern SPAs and classic server-side routing.",
-          icon: "./inertia.png",
-      },
-      {
-          name: "Vite",
-          description:
-              "Lightning-fast dev server and build tool for modern web projects.",
-          icon: "./vite.png",
-      },
-  ];
+    const skills = [
+        {
+            name: "React",
+            description:
+                "Building interactive user interfaces with a component-based architecture.",
+            icon: "./react.png",
+        },
+        {
+            name: "Laravel",
+            description:
+                "Robust back-end development with MVC and elegant syntax.",
+            icon: "./laravel.png",
+        },
+        {
+            name: "Tailwind CSS",
+            description: "Utility-first CSS for rapid UI development.",
+            icon: "./tailwind.png",
+        },
+        {
+            name: "JavaScript",
+            description:
+                "Core web development language for dynamic functionality.",
+            icon: "./javascript.png",
+        },
+        {
+            name: "PHP",
+            description:
+                "Server-side scripting with integration into Laravel and beyond.",
+            icon: "./php.png",
+        },
+        {
+            name: "MySQL",
+            description:
+                "Reliable relational database management for storing and querying data.",
+            icon: "./mysql.png",
+        },
+        {
+            name: "Inertia.js",
+            description:
+                "Bridges the gap between modern SPAs and classic server-side routing.",
+            icon: "./inertia.png",
+        },
+        {
+            name: "Vite",
+            description:
+                "Lightning-fast dev server and build tool for modern web projects.",
+            icon: "./vite.png",
+        },
+    ];
 
     return (
         <div className="bg-gray-50">
-            <div id="skills" className="max-w-7xl mx-auto py-16 px-6">
+            <div className="max-w-7xl mx-auto py-16 px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl text-gray-700 font-bold mb-4">
                         My Skills
