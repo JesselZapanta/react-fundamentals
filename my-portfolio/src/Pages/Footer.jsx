@@ -4,7 +4,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                     <div className="text-center md:text-left">
-                        <p className="text-muted-foreground">
+                        <p className="text-gray-500">
                             © {new Date().getFullYear()} Jessel Zapanta. All rights reserved.
                         </p>
                     </div>
@@ -13,7 +13,7 @@ export default function Footer() {
                             href="https://github.com/jesselZapanta"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-primary transition-colors"
+                            className="text-gray-500 hover:text-primary transition-colors"
                             aria-label="GitHub">
                             <svg
                                 aria-hidden="true"

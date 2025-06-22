@@ -2,7 +2,7 @@ export default function Code() {
     return (
         <div className="relative">
             <div className="bg-gray-900 border rounded-lg overflow-hidden shadow-lg">
-                <div className="bg-muted px-4 py-3 flex items-center space-x-2">
+                <div className="bg-gray-700 px-4 py-3 flex items-center space-x-2">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
