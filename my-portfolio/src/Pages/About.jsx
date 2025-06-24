@@ -43,17 +43,17 @@ export default function About() {
                             textColor="text-blue-800"
                         />
                         <Tag
-                            label="Fast Learner"
+                            label="Logical"
                             bgColor="bg-purple-100"
                             textColor="text-purple-800"
                         />
                         <Tag
-                            label="Detail-Oriented"
+                            label="Growth-Minded"
                             bgColor="bg-green-100"
                             textColor="text-green-800"
                         />
                         <Tag
-                            label="System Builder"
+                            label="Coachable"
                             bgColor="bg-red-100"
                             textColor="text-red-800"
                         />
