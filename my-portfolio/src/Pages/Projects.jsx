@@ -11,7 +11,7 @@ export default function Projects() {
             image: "./smartlog.png",
             tags: ["React", "Vite", "Tailwind", "PWA", "MySQL"],
             demo: "https://tcgc-smartlog.vercel.app/",
-            github: "https://github.com/JesselZapanta/tcgc-smartlog",
+            github: "https://github.com/JesselZapanta/smartlog",
             featured: true,
         },
         {
@@ -22,7 +22,7 @@ export default function Projects() {
             image: "./disciscan.png",
             tags: ["React", "Vite", "Tailwind", "JavaScript", "MySQL"],
             demo: "https://tcgc-disciscan.vercel.app/",
-            github: "https://github.com/JesselZapanta/tcgc-disciscan",
+            github: "https://github.com/JesselZapanta/disciscan",
             featured: true,
         },
         {
@@ -33,7 +33,7 @@ export default function Projects() {
             image: "./sukicart.png",
             tags: ["React", "Vite", "Tailwind", "PWA", "JavaScript"],
             demo: "https://suki-cart.vercel.app/",
-            github: "https://github.com/JesselZapanta/suki-cart",
+            github: "https://github.com/jesselzapanta09/suki-cart-frontend",
             featured: true,
         },
         {
