@@ -8,7 +8,9 @@ export default function Projects() {
             stack: "React + Vite",
             description:
                 "Photo-captured OJT monitoring for Tangub City Global College — DTR, journals, requirements, evaluations, and reports in one platform.",
-            image: "./smartlog.png",
+            image: "/smartlog.jpg",
+            width: 900,
+            height: 502,
             tags: ["React", "Vite", "Tailwind", "PWA", "MySQL"],
             demo: "https://tcgc-smartlog.vercel.app/",
             github: "https://github.com/JesselZapanta/smartlog",
@@ -19,10 +21,12 @@ export default function Projects() {
             stack: "React + Vite",
             description:
                 "Disciplinary Records & Monitoring System — violations, sanctions, case workflows, and analytics with role-based dashboards.",
-            image: "./disciscan.png",
+            image: "/disciscan.jpg",
+            width: 900,
+            height: 377,
             tags: ["React", "Vite", "Tailwind", "JavaScript", "MySQL"],
             demo: "https://tcgc-disciscan.vercel.app/",
-            github: "https://github.com/JesselZapanta/disciscan",
+            github: null,
             featured: true,
         },
         {
@@ -30,7 +34,9 @@ export default function Projects() {
             stack: "React + Vite",
             description:
                 "Modern e-commerce platform with catalog, cart, and checkout. PWA-ready and Cordova-compatible with Sora/DM Sans UI.",
-            image: "./sukicart.png",
+            image: "/sukicart.jpg",
+            width: 900,
+            height: 363,
             tags: ["React", "Vite", "Tailwind", "PWA", "JavaScript"],
             demo: "https://suki-cart.vercel.app/",
             github: "https://github.com/jesselzapanta09/suki-cart-frontend",
@@ -41,7 +47,9 @@ export default function Projects() {
             stack: "Laravel + React",
             description:
                 "Web-based publication platform for Tangub City Global College — article submission, moderation, and e-newsletter distribution.",
-            image: "./torch.png",
+            image: "/torch.jpg",
+            width: 900,
+            height: 638,
             tags: ["Laravel", "React", "Inertia", "Tailwind", "MySQL"],
             demo: null,
             github: "https://github.com/JesselZapanta/thetorchpublication",
@@ -51,7 +59,9 @@ export default function Projects() {
             stack: "Laravel + React",
             description:
                 "Engineering project tracking for road, waterworks, and building construction — updates, progress photos, and reports.",
-            image: "./tcemps.png",
+            image: "/tcemps.jpg",
+            width: 900,
+            height: 419,
             tags: [
                 "Laravel",
                 "React",
@@ -68,7 +78,9 @@ export default function Projects() {
             stack: "Laravel + React",
             description:
                 "Inventory control — categories, suppliers, users, and stock management with clean CRUD workflows.",
-            image: "./inventory.png",
+            image: "/inventory.jpg",
+            width: 900,
+            height: 441,
             tags: [
                 "Laravel",
                 "React",
@@ -111,8 +123,12 @@ export default function Projects() {
                             <div className="flex flex-col flex-1 overflow-hidden border border-slate-200 bg-white rounded-2xl shadow-sm group-hover:shadow-xl group-hover:border-slate-200 group-hover:bg-white">
                                 <div className="relative h-48 overflow-hidden bg-slate-100">
                                     <img
-                                        alt={project.name}
+                                        alt={`${project.name} — ${project.stack} project screenshot`}
                                         src={project.image}
+                                        width={project.width}
+                                        height={project.height}
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -155,18 +171,24 @@ export default function Projects() {
                                     </div>
 
                                     <div className="mt-auto flex gap-2">
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={`inline-flex gap-1.5 items-center justify-center whitespace-nowrap text-sm font-semibold h-10 rounded-full px-4 flex-1 transition-colors ${
-                                                project.demo
-                                                    ? "border border-slate-200 bg-white text-slate-900 hover:bg-slate-50 hover:border-slate-300"
-                                                    : "bg-slate-900 text-white hover:bg-slate-800 shadow-md"
-                                            }`}>
-                                            <Github className="w-4 h-4" />
-                                            GitHub
-                                        </a>
+                                        {project.github ? (
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={`inline-flex gap-1.5 items-center justify-center whitespace-nowrap text-sm font-semibold h-10 rounded-full px-4 flex-1 transition-colors ${
+                                                    project.demo
+                                                        ? "border border-slate-200 bg-white text-slate-900 hover:bg-slate-50 hover:border-slate-300"
+                                                        : "bg-slate-900 text-white hover:bg-slate-800 shadow-md"
+                                                }`}>
+                                                <Github className="w-4 h-4" />
+                                                GitHub
+                                            </a>
+                                        ) : (
+                                            <span className="inline-flex items-center justify-center whitespace-nowrap text-xs font-medium text-slate-400 border border-dashed border-slate-200 h-10 rounded-full px-4 flex-1 bg-slate-50">
+                                                Source unavailable
+                                            </span>
+                                        )}
                                         {project.demo ? (
                                             <a
                                                 href={project.demo}

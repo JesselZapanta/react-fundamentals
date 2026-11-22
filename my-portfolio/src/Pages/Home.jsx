@@ -30,22 +30,25 @@ export default function Home({ setActiveSection }) {
                                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05] tracking-tight text-slate-900">
                                     Hi, I&apos;m <br />
                                     <span className="font-black tracking-tight bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-600 bg-clip-text text-transparent">
-                                        <Typewriter
-                                            words={["Jessel Zapanta"]}
-                                            loop={true}
-                                            cursor
-                                            cursorStyle="|"
-                                            typeSpeed={150}
-                                            deleteSpeed={50}
-                                            delaySpeed={1500}
-                                        />
+                                        <span className="sr-only">Jessel Zapanta</span>
+                                        <span aria-hidden="true">
+                                            <Typewriter
+                                                words={["Jessel Zapanta"]}
+                                                loop={true}
+                                                cursor
+                                                cursorStyle="|"
+                                                typeSpeed={150}
+                                                deleteSpeed={50}
+                                                delaySpeed={1500}
+                                            />
+                                        </span>
                                     </span>
                                 </h1>
                                 <p className="text-lg font-semibold sm:text-xl md:text-2xl text-slate-700">
                                     Full Stack Developer <br />
-                                    <span className="text-indigo-500">React</span>
+                                    <span className="text-indigo-600">React</span>
                                     <span className="text-slate-400 mx-2">&</span>
-                                    <span className="text-indigo-500">Laravel</span>
+                                    <span className="text-indigo-600">Laravel</span>
                                 </p>
                             </div>
                         </Reveal>
@@ -116,8 +119,14 @@ export default function Home({ setActiveSection }) {
                         <span className="relative flex shrink-0 overflow-hidden rounded-[2.5rem] h-72 w-72 md:w-[420px] md:h-[420px] shadow-2xl shadow-indigo-100 border-[8px] border-white hover:scale-[1.02] transition-transform duration-500">
                             <img
                                 className="aspect-square h-full w-full object-cover"
-                                src="./pfp.png"
+                                src="/pfp.jpg"
+                                srcSet="/pfp-420.jpg 420w, /pfp-560.jpg 560w, /pfp.jpg 840w"
+                                sizes="(min-width: 768px) 404px, 272px"
                                 alt="Jessel Zapanta"
+                                width="840"
+                                height="840"
+                                fetchPriority="high"
+                                decoding="async"
                             />
                         </span>
                     </Reveal>

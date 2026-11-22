@@ -40,7 +40,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+                <div className="mt-6 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
                     <p>Built with React • Vite • Tailwind CSS</p>
                     <div className="flex items-center gap-4">
                         <a href="#Home" className="hover:text-slate-600 transition">

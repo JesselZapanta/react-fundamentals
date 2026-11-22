@@ -1,0 +1,7 @@
+# Robots.txt for Jessel Zapanta's portfolio
+# https://jeszapanta.vercel.app/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://jeszapanta.vercel.app/sitemap.xml

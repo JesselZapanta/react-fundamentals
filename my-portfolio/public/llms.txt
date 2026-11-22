@@ -1,0 +1,25 @@
+# Jessel Zapanta — Full Stack Developer
+
+> Portfolio of Jessel Zapanta, a full stack web developer based in Tangub City, Philippines, specializing in Laravel, React, and Tailwind CSS.
+
+## Portfolio
+
+- [Home](https://jeszapanta.vercel.app/): Introduction, availability, and highlights.
+- [About](https://jeszapanta.vercel.app/#About): Background, approach, and experience.
+- [Skills](https://jeszapanta.vercel.app/#Skills): React, Laravel, Tailwind CSS, JavaScript, PHP, MySQL, Inertia.js, and Vite.
+- [Projects](https://jeszapanta.vercel.app/#Projects): Selected full-stack work with live demos and source links.
+- [Contact](https://jeszapanta.vercel.app/#Contact): Email, phone, location, CV, and contact form.
+
+## Selected projects
+
+- [TCGC SmartLog](https://tcgc-smartlog.vercel.app/): OJT monitoring platform for Tangub City Global College — DTR, journals, requirements, evaluations, and reports.
+- [TCGC DisciScan](https://tcgc-disciscan.vercel.app/): Disciplinary records and monitoring system with violations, sanctions, case workflows, and role-based dashboards.
+- [Suki Cart](https://suki-cart.vercel.app/): E-commerce platform with catalog, cart, and checkout, built as a PWA.
+- [Torch Publication](https://github.com/JesselZapanta/thetorchpublication): Publication platform for article submission, moderation, and e-newsletter distribution.
+- [Project Monitoring System](https://github.com/JesselZapanta/tcepms): Engineering project tracking for road, waterworks, and building construction.
+- [Inventory Management System](https://github.com/JesselZapanta/ims): Inventory control for categories, suppliers, users, and stock.
+
+## Profiles
+
+- [GitHub](https://github.com/JesselZapanta)
+- [Email](mailto:jeszapanta9@gmail.com)

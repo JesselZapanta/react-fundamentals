@@ -168,18 +168,20 @@ export default function Contact() {
                                         href="https://github.com/JesselZapanta"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label="GitHub"
                                         className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-900 transition">
                                         <Github className="w-4 h-4" />
                                     </a>
                                     <a
                                         href="mailto:jeszapanta9@gmail.com"
+                                        aria-label="Email"
                                         className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-900 transition">
                                         <Mail className="w-4 h-4" />
                                     </a>
                                 </div>
 
                                 <a
-                                    href="./cv_jessel_zapanta.pdf"
+                                    href="/cv_jessel_zapanta.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="mt-2 inline-flex items-center justify-center gap-2 w-full h-11 rounded-full bg-indigo-500 text-white text-sm font-semibold hover:bg-indigo-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">

@@ -6,48 +6,48 @@ export default function Skills() {
             name: "React",
             description:
                 "Building interactive UIs with component-based architecture.",
-            icon: "./react.png",
+            icon: "/react.png",
         },
         {
             name: "Laravel",
             description:
                 "Robust back-end with MVC, Eloquent, and elegant syntax.",
-            icon: "./laravel.png",
+            icon: "/laravel.png",
         },
         {
             name: "Tailwind CSS",
             description: "Utility-first CSS for rapid, consistent UI development.",
-            icon: "./tailwind.png",
+            icon: "/tailwind.png",
         },
         {
             name: "JavaScript",
             description:
                 "Core language for dynamic, modern web functionality.",
-            icon: "./javascript.png",
+            icon: "/javascript.png",
         },
         {
             name: "PHP",
             description:
-                "Server-side scripting — foundation of Laravel apps.",
-            icon: "./php.png",
+                "Server-side scripting â€” foundation of Laravel apps.",
+            icon: "/php.png",
         },
         {
             name: "MySQL",
             description:
                 "Reliable relational DB for storing and querying data.",
-            icon: "./mysql.png",
+            icon: "/mysql.png",
         },
         {
             name: "Inertia.js",
             description:
                 "Bridges modern SPAs with classic server-side routing.",
-            icon: "./inertia.png",
+            icon: "/inertia.png",
         },
         {
             name: "Vite",
             description:
                 "Lightning-fast dev server & build tool for modern projects.",
-            icon: "./vite.png",
+            icon: "/vite.png",
         },
     ];
 
@@ -87,7 +87,11 @@ export default function Skills() {
                                         <img
                                             className="w-full h-full object-contain"
                                             src={skill.icon}
-                                            alt={skill.name}
+                                            alt={`${skill.name} logo`}
+                                            width="64"
+                                            height="64"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <h3 className="font-bold text-slate-900 text-base mb-1.5 mt-4 tracking-tight">
@@ -105,3 +109,4 @@ export default function Skills() {
         </div>
     );
 }
+
