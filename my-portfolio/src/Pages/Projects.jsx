@@ -63,8 +63,9 @@ export default function Projects() {
             width: 900,
             height: 638,
             tags: ["Laravel", "React", "Inertia", "Tailwind", "MySQL"],
-            demo: null,
+            demo: "http://torch.gadtc.edu.ph/",
             github: "https://github.com/JesselZapanta/thetorchpublication",
+            featured: true,
         },
         {
             name: "Project Monitoring System",
