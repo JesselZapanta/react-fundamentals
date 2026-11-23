@@ -43,6 +43,18 @@ export default function Projects() {
             featured: true,
         },
         {
+            name: "HRDRMS",
+            stack: "Electron + React",
+            description:
+                "Human Resource Digital Records Management System for LGU Ozamiz — encrypted employee records, manila-folder categories, and role-based access in a desktop app.",
+            image: "/hrdrms.jpg",
+            width: 900,
+            height: 466,
+            tags: ["Electron", "React", "Tailwind", "SQLite", "JavaScript"],
+            demo: null,
+            github: "https://github.com/JesselZapanta/hrrms",
+        },
+        {
             name: "Torch Publication",
             stack: "Laravel + React",
             description:
@@ -109,9 +121,9 @@ export default function Projects() {
                     <p className="text-slate-500 mt-4 max-w-2xl mx-auto">
                         From OJT & disciplinary systems to e-commerce — here are{" "}
                         <span className="font-semibold text-slate-700">
-                            6 full-stack products
+                            7 shipped products
                         </span>{" "}
-                        built with Laravel, React, and modern tooling.
+                        built with Laravel, React, Electron, and modern tooling.
                     </p>
                 </div>
             </Reveal>

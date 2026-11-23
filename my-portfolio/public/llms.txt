@@ -15,6 +15,7 @@
 - [TCGC SmartLog](https://tcgc-smartlog.vercel.app/): OJT monitoring platform for Tangub City Global College — DTR, journals, requirements, evaluations, and reports.
 - [TCGC DisciScan](https://tcgc-disciscan.vercel.app/): Disciplinary records and monitoring system with violations, sanctions, case workflows, and role-based dashboards.
 - [Suki Cart](https://suki-cart.vercel.app/): E-commerce platform with catalog, cart, and checkout, built as a PWA.
+- [HRDRMS](https://github.com/JesselZapanta/hrrms): Desktop HR records management for LGU Ozamiz — encrypted employee files, role-based access, and folder-style categories.
 - [Torch Publication](https://github.com/JesselZapanta/thetorchpublication): Publication platform for article submission, moderation, and e-newsletter distribution.
 - [Project Monitoring System](https://github.com/JesselZapanta/tcepms): Engineering project tracking for road, waterworks, and building construction.
 - [Inventory Management System](https://github.com/JesselZapanta/ims): Inventory control for categories, suppliers, users, and stock.
